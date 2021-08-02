@@ -1,0 +1,15 @@
+.page-header {
+ background-color: #3c3c3c;
+ margin-top: 0;
+ padding: 20px 20px 20px 40px;
+ font-family: 'Gowun Batang', sans-serif;
+}
+.page-header h1 {
+ color: #FFFFFF;
+}
+.container {
+ font-family: 'Gowun Batang', sans-serif;
+}
+.container h2 {
+ color: #652596;
+}

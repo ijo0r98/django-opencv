@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 app_name = 'opencv_webapp' # url name이 app마다 겹치는 것 방지
 
 urlpatterns = [
-    path('', views.first_view, name='first_view'),
+    path('', views.index, name='index'),
     path('simple_upload/', views.simple_upload, name='simple_upload'),
     path('detect_face/', views.detect_face, name='detect_face'),
 ]

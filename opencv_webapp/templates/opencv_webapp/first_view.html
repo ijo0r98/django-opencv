@@ -1,10 +1,39 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    Hello world!
-  </body>
+<html lang="ko">
+<head>
+  <title>Django Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap" rel="stylesheet">
+
+  <!--collectstatic-->
+  <link rel='stylesheet', href="{% static 'cv_project/css/styles.css' %}">
+
+</head>
+<body>
+  <div class="page-header">
+    <h1>
+      Django Web
+    </h1>
+  </div>
+  <div class="container">
+    by Juran, 2021.08.02
+    <br/>
+    <br/>
+    <h4>📌 단순 이미지 업로드 </h4>
+    <p>Simple Image Upload📷  <a href='/simple_upload'>https://juran.pythonanywhere.com/simple_upload/ </a></p>
+    <br />
+
+    <h4>📌 OpenCV 이용한 얼굴감지 </h4>
+    <p>Look for my face🙄  <a href='/detect_face'>https://juran.pythonanywhere.com/detect_face/</a> </p>
+    <br />
+  </div>
+</body>
+
 </html>

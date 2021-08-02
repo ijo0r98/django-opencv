@@ -1,24 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load staticfiles %}
 
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Opencv-Django</title>
+  <title>Django Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap" rel="stylesheet">
+
+  <!--collectstatic-->
+  <link rel='stylesheet', href="{% static 'cv_project/css/styles.css' %}">
+
 </head>
 
 <body>
-  <h1>Upload your image file.</h1>
+  <div class="page-header">
+    <h1>
+      Simple Image Upload📷
+    </h1>
+  </div>
+  <div class="container">
   <form method="POST" enctype="multipart/form-data">
     <!-- 자동으로 같은 url로 post 요청 -->
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Upload</button>
   </form>
+
   {% if uploaded_file_url %}
-  <img src="{{ uploaded_file_url }}">
-  <p>Uploaded file @ : <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+    <a>업로드 확인👇🏻</a>
+    <img src="{{ uploaded_file_url }}">
+    <p>Uploaded file @ : <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
   {% endif %}
-  <p><a href="{% url 'opencv_webapp:simple_upload' %}">Return to home</a></p>
+
+  <br/>
+  <p><a href="{% url 'opencv_webapp:index' %}">Return to home</a></p>
+
 </body>
 
 </html>

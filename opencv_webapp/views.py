@@ -6,9 +6,11 @@ from .cv_functions import cv_detect_face
 
 # Create your views here.
 
-def first_view(request):
-    return render(request, 'opencv_webapp/first_view.html', {})
+# def first_view(request):
+#     return render(request, 'opencv_webapp/first_view.html', {})
 
+def index(request):
+    return render(request, 'opencv_webapp/first_view.html', {})
 
 def simple_upload(request):
 

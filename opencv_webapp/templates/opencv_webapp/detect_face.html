@@ -1,23 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load staticfiles %}
 
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Opencv-Django</title>
+  <title>Django Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap" rel="stylesheet">
+
+  <!--collectstatic-->
+  <link rel='stylesheet', href="{% static 'cv_project/css/styles.css' %}">
+
 </head>
 
 <body>
-  <form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Upload</button>
-  </form>
+  <div class="page-header">
+    <h1>
+      Look for my face🙄
+    </h1>
+  </div>
+  <div class="container">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <a style="color:red;">얼굴을 감지할 이미지 선택 후 upload를 눌러주세요</a>
+      <button type="submit">Upload</button>
+    </form>
+  <br/>
+
   {% if post %}
-  <!-- post.document : ImageUploadModel Class에 선언되어 있는 "document"에 해당 (브라우저 확인) -->
-  <img src="{{ post.document.url }}">
-  <p>Uploaded file @ : <a href="{{ post.document.url }}">{{ post.document }}</a></p>
+    <a>결과 확인👇🏻</a>
+    <img src="{{ post.document.url }}">
+    <p>Uploaded file @ : <a href="{{ post.document.url }}">{{ post.document }}</a></p>
   {% endif %}
-  <p><a href="{% url 'opencv_webapp:detect_face' %}">Return to home</a></p>
+  <br/>
+
+  <p><a href="{% url 'opencv_webapp:index' %}">Return to home</a></p>
+
+</div>
 </body>
 
 </html>
