@@ -2,7 +2,7 @@
 
 <br>
 
-▶️ https://juran.pythonanywhere.com/detect_face/
+▶️ https://juran.pythonanywhere.com/
 <br/>
 
 ![1](https://user-images.githubusercontent.com/50325009/127821291-498cc85a-5765-4a6b-9964-0ca728baa4c8.PNG)
